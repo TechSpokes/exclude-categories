@@ -11,7 +11,7 @@
  * Plugin Name: Exclude Categories by TechSpokes Inc.
  * Plugin URI:  https://github.com/TechSpokes/techspokes-exclude-categories.git
  * Description: Allows you to exclude specific categories from blog page and feed in WordPress.
- * Version:     0.0.1
+ * Version:     1.0.0
  * Author:      TechSpokes Inc.
  * Author URI:  https://techspokes.com
  * Text Domain: techspokes-exclude-categories
@@ -27,9 +27,9 @@ require_once( dirname( __FILE__ ) . '/autoload.php' );
 
 // load plugin text domain
 add_action( 'plugins_loaded', function () {
-
 	load_plugin_textdomain( 'techspokes-exclude-categories', false, basename( dirname( __FILE__ ) . '/languages' ) );
 }, 10, 0 );
 
 // load the plugin
-add_action( 'plugins_loaded', array( 'TechSpokes\ExcludeCategories\Plugin', 'load' ), 10, 0 );
+add_action( 'plugins_loaded', array( 'TechSpokes\ExcludeCategories\Plugin', 'getInstance' ), 10, 0 );
+
